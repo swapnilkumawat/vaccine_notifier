@@ -14,8 +14,8 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.0'
 
 gem 'whenever', require: false
-gem 'mina'
-gem 'mina-multistage'
+gem 'mina', '0.3.8'
+gem 'mina-multistage', '0.1.1', require: false
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
