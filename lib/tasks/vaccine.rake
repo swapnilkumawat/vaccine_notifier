@@ -14,6 +14,7 @@ namespace :vaccine do
       results[:centers].each do |center|
         sessions = center[:sessions].select{ |c| c[:min_age_limit] == 18 }
         sessions_with_availability = sessions.select{ |s| s[:available_capacity] > 0 && s[:available_capacity_dose1] > 0 }
+
         if sessions_with_availability.any?
           puts sessions_with_availability
           sessions_with_availability.each do |s|
