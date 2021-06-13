@@ -5,7 +5,7 @@ namespace :vaccine do
   desc "Vaccine Availability"
   task availability: [:environment] do
     [180002, 180003, 180004, 180005, 421302].each do |pincode|
-      uri = URI.parse("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=#{pincode}&date=#{Date.yesterday.strftime('%d-%m-%Y')}")
+      uri = URI.parse("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=#{pincode}&date=#{Date.today.strftime('%d-%m-%Y')}")
 
       results = Net::HTTP.get(uri) 
       results = JSON.parse(results).with_indifferent_access
