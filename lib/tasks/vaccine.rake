@@ -26,7 +26,7 @@ namespace :vaccine do
       end
     end
 
-    uri = URI.parse("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=421302&date=#{Date.today.strftime('%d-%m-%Y')}")
+    uri = URI.parse("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=421302&date=#{Date.yesterday.strftime('%d-%m-%Y')}")
 
     results = Net::HTTP.get(uri)
     results = JSON.parse(results).with_indifferent_access
