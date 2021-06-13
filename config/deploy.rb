@@ -11,12 +11,11 @@ require 'mina/rvm'
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain, '157.245.99.201'
+set :domain, '143.110.184.100'
 set :deploy_to, '/home/deployer/apps/vaccine_notifier'
 set :repository, 'git@github.com:swapnilkumawat/vaccine_notifier.git'
 set :branch, 'master'
-set :user, 'root'
-set_default :rvm_path, "/usr/share/rvm/bin/rvm"
+set :user, 'deployer'
 
 # For system-wide RVM install.
 #   set :rvm_path, '/usr/local/rvm/bin/rvm'
@@ -34,14 +33,14 @@ set :shared_paths, ['config/database.yml', 'config/secrets.yml', 'log']
 # `mina deploy` or `mina rake`.
 # invoke :'rvm:use[ruby-2.7.2@default]'
 
-task :environment do
+# task :environment do
   # If you're using rbenv, use this to load the rbenv environment.
   # Be sure to commit your .ruby-version or .rbenv-version to your repository.
   # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
   invoke :'rvm:use[ruby-2.7.2@default]'
-end
+# end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.
 # For Rails apps, we'll make some of the shared paths that are shared between

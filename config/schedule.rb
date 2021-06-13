@@ -21,6 +21,6 @@
 
 set :output, "log/cron_log.log"
 
-every 10.seconds do
+every '*/10 * * * * *' do
   rake "vaccine:availability"
 end
