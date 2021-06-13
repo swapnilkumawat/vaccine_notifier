@@ -26,15 +26,15 @@ namespace :vaccine do
       end
     end
 
-    uri = URI.parse("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=421302&date=#{Date.yesterday.strftime('%d-%m-%Y')}")
+    uri = URI.parse("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=421302&date=#{Date.today.strftime('%d-%m-%Y')}")
 
     results = Net::HTTP.get(uri)
     results = JSON.parse(results).with_indifferent_access
 
     availability = {}
     results[:centers].each do |center|
-      sessions = center[:sessions].select{ |c| c[:min_age_limit] == 45 }
-      sessions_with_availability = sessions.select{ |s| s[:available_capacity] >= 0 && s[:available_capacity_dose1] >= 0 }
+      sessions = center[:sessions].select{ |c| c[:min_age_limit] == 18 }
+      sessions_with_availability = sessions.select{ |s| s[:available_capacity] > 0 && s[:available_capacity_dose1] > 0 }
 
       if sessions_with_availability.any?
         puts sessions_with_availability
