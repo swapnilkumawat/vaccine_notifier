@@ -32,7 +32,7 @@ namespace :vaccine do
     results = JSON.parse(results).with_indifferent_access
 
     availability = {}
-    results[:centers].each do |center|
+    results[:centers].select{ |c| c['fee_type'] == "Free" }.each do |center|
       sessions = center[:sessions].select{ |c| c[:min_age_limit] == 18 }
       sessions_with_availability = sessions.select{ |s| s[:available_capacity] > 0 && s[:available_capacity_dose1] > 0 }
 

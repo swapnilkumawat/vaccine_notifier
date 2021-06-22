@@ -11,7 +11,7 @@ require 'mina/rvm'
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain, '143.110.184.100'
+set :domain, '143.110.187.43'
 set :deploy_to, '/home/deployer/apps/vaccine_notifier'
 set :repository, 'git@github.com:swapnilkumawat/vaccine_notifier.git'
 set :branch, 'master'
