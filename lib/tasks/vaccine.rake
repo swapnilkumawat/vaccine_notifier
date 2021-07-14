@@ -57,7 +57,7 @@ namespace :vaccine do
             end
             message = "Slot Available for date #{s[:date]} at #{center[:name]}, #{center[:address]}, #{center[:state_name]}, #{center[:block_name]}, Pincode - #{center[:pincode]}%0aAge Group - #{age_limit}%0aTotal Slot Available for Dose 1 - #{s[:available_capacity_dose1]}%0aTotal Slot Available for Dose 2 - #{s[:available_capacity_dose2]}"
             p message
-            uri = URI.parse("https://api.telegram.org/bot1785013706:AAE6UO15kbWyulGbUtb2_4SgM4dlnBSikwA/sendMessage?chat_id=@bhiwandi_slots_notifier&parse_mode=HTML&text=#{message}")
+            uri = URI.parse("https://api.telegram.org/bot1894280304:AAFjbMv3R-Hn_WVWCU5g_Ye1fvR90gCHm8I/sendMessage?chat_id=@vaccine_slots&parse_mode=HTML&text=#{message}")
             results = Net::HTTP.get(uri)
             p results
           end
